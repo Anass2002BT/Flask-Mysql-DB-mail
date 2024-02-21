@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+}
+
+form {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+.mensaje {
+    color: #FF0000;
+    font-weight: bold;
+}
+
+/* Estilos para la imagen */
+img {
+    width: 200px; /* Ajusta el tamaño de la imagen según sea necesario */
+    position: absolute; /* Establece la posición absoluta para poder animarla */
+    animation: bounce 2s infinite; /* Aplica la animación 'bounce' durante 2 segundos y repítela infinitamente */
+}
+
+/* Definición de la animación */
+@keyframes bounce {
+    0% {
+        top: 0; /* Posición inicial de la animación en la parte superior */
+        left: 0; /* Posición inicial de la animación en la izquierda */
+    }
+    50% {
+        top: 0; /* La imagen permanece en la parte superior */
+        left: calc(100% - 200px); /* La imagen se mueve hacia la derecha */
+    }
+    100% {
+        top: calc(100% - 200px); /* La imagen se mueve hacia la parte inferior */
+        left: calc(100% - 200px); /* La imagen se mueve hacia la derecha */
+    }
+}
+
+/* Definición de la animación de parpadeo */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Aplicar la animación de parpadeo a un elemento específico */
+.blinking {
+    animation: blink 1s infinite; /* Aplica la animación 'blink' durante 1 segundo y repítela infinitamente */
+}
+

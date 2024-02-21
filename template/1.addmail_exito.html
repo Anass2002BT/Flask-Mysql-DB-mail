@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Éxito{% endblock %}
+
+{% block content %}
+    <h2 class="blinking">Éxito</h2>
+    <p>Se ha agregado un nuevo correo electrónico.</p>
+    <p><a href="{{ url_for('formulario') }}">Volver al formulario</a></p>
+{% endblock %}
+

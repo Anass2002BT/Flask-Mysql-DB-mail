@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Título de la página{% endblock %}</title>
+    {% block styles %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estilos.css') }}">
+    {% endblock %}
+</head>
+<body>
+    <div class="container">
+        {% block content %}
+            {% if template == 'formulario' %}
+                <h2 class="blinking">Formulario</h2>
+                <form action="{{ url_for('getmail') }}" method="post">
+                    <p>*Ingresa tu nombre para mostrarte tu Correo electronico*  </p>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required><br><br>
+
+                    <input type="submit" value="Enviar">
+                    <p><a href="{{ url_for('addmail') }}">Añadir mail</a></p>
+                </form>
+            {% elif template == 'resultado' %}
+                <h2>Resultado</h2>
+
+                <div class="resultados">
+                    {% if email %}
+                        <p>Correo electrónico de {{ nombre }}: {{ email }}</p>
+                    {% else %}
+                        <p class="mensaje">No se encontró ningún correo asociado a ese nombre.</p>
+                    {% endif %}
+                </div>
+            {% elif template == 'addmail' %}
+                <!-- Aquí puedes poner el contenido para agregar correo electrónico -->
+            {% elif template == 'addmail_exito' %}
+                <!-- Aquí puedes poner el contenido para la página de éxito después de agregar correo electrónico -->
+            {% endif %}
+        {% endblock %}
+    </div>
+</body>
+</html>
